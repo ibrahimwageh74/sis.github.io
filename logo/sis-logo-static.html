@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SIS Logo — Static</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink: #14171F;
+    --accent: #2F6FED;
+    --bg-light: #FFFFFF;
+    --bg-dark: #0E1117;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){ --ink:#F3F4F6; }
+  }
+  :root[data-theme="dark"]{ --ink:#F3F4F6; }
+
+  * { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; }
+
+  body{
+    display: grid;
+    place-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg-light);
+    padding: env(safe-area-inset-top,0px) 24px env(safe-area-inset-bottom,0px);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]) body{ background: var(--bg-dark); }
+  }
+  :root[data-theme="dark"] body{ background: var(--bg-dark); }
+
+  /* Plain, non-interactive lockup — no hover state, no motion, no link */
+  .lockup{
+    display: flex;
+    align-items: flex-end;
+    gap: 6px;
+    user-select: none;
+  }
+
+  .wordmark{
+    font-family: 'IBM Plex Sans', Arial, sans-serif;
+    font-size: 92px;
+    font-weight: 700;
+    letter-spacing: -3px;
+    color: var(--ink);
+    line-height: .82;
+  }
+
+  .robot{
+    width: 62px;
+    height: 82px;
+    margin: 0 1px 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .robot-head{
+    width: 58px;
+    height: 42px;
+    border: 9px solid var(--accent);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .robot-eye{
+    width: 9px;
+    height: 9px;
+    border-radius: 3px;
+    background: var(--accent);
+  }
+
+  .robot-body{
+    width: 17px;
+    height: 32px;
+    margin-top: 8px;
+    border-radius: 3px;
+    background: var(--accent);
+  }
+
+  @media (max-width: 600px){
+    .wordmark{ font-size: 56px; letter-spacing: -2px; }
+    .robot{ width: 38px; height: 50px; margin-bottom: 3px; }
+    .robot-head{ width: 35px; height: 26px; border-width: 5px; border-radius: 9px; gap: 7px; }
+    .robot-eye{ width: 6px; height: 6px; border-radius: 2px; }
+    .robot-body{ width: 10px; height: 20px; margin-top: 5px; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="lockup" aria-label="SIS">
+    <span class="wordmark">S</span>
+
+    <span class="robot">
+      <span class="robot-head">
+        <span class="robot-eye"></span>
+        <span class="robot-eye"></span>
+      </span>
+      <span class="robot-body"></span>
+    </span>
+
+    <span class="wordmark">S</span>
+  </div>
+
+</body>
+</html>
