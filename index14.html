@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SIS — Smart Integration Systems</title>
+<meta name="description" content="SIS — Smart Integration Systems designs intelligent systems that connect AI, business data, communication and operations into one coordinated infrastructure. AI systems, education and consultation.">
+<meta name="theme-color" content="#D6D8DE">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://sis.ai/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SIS — Smart Integration Systems">
+<meta property="og:title" content="SIS — Smart Integration Systems">
+<meta property="og:description" content="Your business. Reengineered by intelligence. Intelligent systems that connect AI, data, communication and operations.">
+<meta property="og:url" content="https://sis.ai/">
+<meta property="og:image" content="https://sis.ai/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SIS — Smart Integration Systems">
+<meta name="twitter:description" content="Intelligence, engineered into the business.">
+<meta name="twitter:image" content="https://sis.ai/og-image.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23202124'/%3E%3Crect x='7' y='6' width='18' height='12' rx='3' fill='none' stroke='%23A4162A' stroke-width='3'/%3E%3Crect x='12' y='20' width='8' height='7' fill='%23A4162A'/%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"SIS — Smart Integration Systems","url":"https://sis.ai/","slogan":"Intelligence, engineered into the business.","email":"hello@sis.ai","description":"AI agency designing intelligent systems, AI education and consultation for businesses."}</script>
+<!-- Theme bootstrap: runs before first paint to prevent a flash of the wrong theme -->
+<script>
+(function () {
+    var t = 'light';
+    try { var s = localStorage.getItem('sis-theme'); if (s === 'light' || s === 'dark') t = s; } catch (e) {}
+    document.documentElement.setAttribute('data-theme', t);
+    var m = document.querySelector('meta[name="theme-color"]');
+    if (m) m.setAttribute('content', t === 'light' ? '#D6D8DE' : '#202124');
+})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"><noscript><style>.rv,.quote .qmark,.quote .q1,.quote .q2{opacity:1!important;transform:none!important}.problem{height:auto}.p-stage{position:relative;height:auto}</style></noscript>
+<style>
+/* =========================================================
+   SIS — Smart Integration Systems
+   Concept: ROGUE INTELLIGENCE.
+   Theme system: all grey-based surfaces/text/lines are CSS custom
+   properties switched by html[data-theme="dark" | "light"].
+   Deep reds (hero, footer, accents on red) are identical in both.
+========================================================= */
+
+/* ---------- VARIABLES: shared (reds, fonts, scale) ---------- */
+:root {
+    /* Deep reds — identical in both themes */
+    --red-deep: #650B16;
+    --red-deep-2: #4E0812;
+    --acc: #A4162A;
+    --acc-hi: #C41E36;
+    --acc-soft: #D4586B;
+    --crim: #8B0015;
+    --tx-on-red: #F7E9EB;
+    --tx-on-red-2: #D9B7BD;
+    --line-on-red: rgba(255,255,255,.14);
+    --line-on-red-2: rgba(255,255,255,.24);
+
+    /* Fonts */
+    --f-display: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+    --f-body: "DM Sans", "Helvetica Neue", Arial, sans-serif;
+    --f-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+    /* Type scale */
+    --fs-hero: clamp(38px, 5.9vw, 96px);
+    --fs-h2: clamp(30px, 4.6vw, 62px);
+    --fs-h3: clamp(24px, 2.8vw, 38px);
+    --fs-lead: clamp(16px, 1.5vw, 19px);
+    --fs-body: 16px;
+    --fs-label: 11px;
+
+    --wrap: 1240px;
+    --gut: clamp(16px, 4vw, 40px);
+    --ease: cubic-bezier(.2,.7,.2,1);
+
+    /* ---- DARK GREY (default) ---- */
+    --bg: #202124;
+    --s1: #2A2C31;
+    --s2: #303238;
+    --s3: #3A3C44;
+    --tx: #F2F2F4;
+    --tx-2: #B8B9BF;
+    --mut: #8A8A94;
+    --mut-2: #6E6F78;
+    --line: rgba(242,242,244,.09);
+    --line-2: rgba(242,242,244,.16);
+    --rline: rgba(164,22,42,.42);
+    --rline-2: rgba(164,22,42,.75);
+    --red-wash: rgba(164,22,42,.10);
+    --ac-t: #C41E36;                 /* accent used as text/line on grey surfaces */
+
+    --sec-bg: transparent;           /* sections are transparent so the robot layer shows behind content */
+    --panel: rgba(42,44,49,.80);
+    --panel-hi: rgba(48,50,56,.86);
+    --card-a: #303238;
+    --card-b: #2A2C31;
+    --card-a2: #35373F;
+    --tag-bg: rgba(255,255,255,.02);
+    --node-fill: #2A2C31;
+    --code-bg: #2A2C31;
+    --btn-ghost-bg: rgba(32,33,36,.55);
+    --nav-bg: rgba(32,33,36,.86);
+    --menu-bg: rgba(32,33,36,.98);
+    --card-shadow: 0 -24px 60px rgba(0,0,0,.5);
+    --hub-wash: rgba(164,22,42,.18);
+    --card-num-wash: rgba(164,22,42,.14);
+    --atm-a: .05; --atm-b: .04;
+    --scan: rgba(255,255,255,.012);
+    --grid-op: .35;
+    --sel-glow: rgba(164,22,42,.65);
+
+    /* Robot surfaces */
+    --rb-s1: #4B4E58; --rb-s2: #393B43; --rb-s3: #2B2D33;
+    --rb-sh: #2B2D33; --rb-body: #33353D; --rb-neck: #2B2D33; --rb-face: #14151A; --rb-nose: #33353D;
+
+    color-scheme: dark;
+}
+
+/* ---- LIGHT GREY ---- */
+:root[data-theme="light"] {
+    --bg: #D6D8DE;
+    --s1: #C8CAD1;
+    --s2: #BABDC5;
+    --s3: #ACAFB8;
+    --tx: #16171A;
+    --tx-2: #3D3F47;
+    --mut: #55575F;
+    --mut-2: #6E7078;
+    --line: rgba(22,23,26,.12);
+    --line-2: rgba(22,23,26,.22);
+    --rline: rgba(164,22,42,.45);
+    --rline-2: rgba(164,22,42,.78);
+    --red-wash: rgba(164,22,42,.12);
+    --ac-t: #A4162A;
+
+    --sec-bg: transparent;
+    --panel: rgba(200,202,209,.62);
+    --panel-hi: rgba(186,189,197,.72);
+    --card-a: #BABDC5;
+    --card-b: #C8CAD1;
+    --card-a2: #ACAFB8;
+    --tag-bg: rgba(255,255,255,.35);
+    --node-fill: rgba(200,202,209,.9);
+    --code-bg: rgba(200,202,209,.85);
+    --btn-ghost-bg: rgba(214,216,222,.55);
+    --nav-bg: rgba(214,216,222,.92);
+    --menu-bg: rgba(214,216,222,.98);
+    --card-shadow: 0 -24px 60px rgba(0,0,0,.10);
+    --hub-wash: rgba(164,22,42,.22);
+    --card-num-wash: rgba(164,22,42,.10);
+    --atm-a: .06; --atm-b: .05;
+    --scan: rgba(22,23,26,.014);
+    --grid-op: .45;
+
+    --rb-s1: #5A5C64; --rb-s2: #46484F; --rb-s3: #33353B;
+    --rb-sh: #2B2D33; --rb-body: #3D3F47; --rb-neck: #33353B; --rb-face: #1E1F23; --rb-nose: #3D3F47;
+
+    color-scheme: light;
+}
+
+/* Subtle, temporary theme transition (class is added only while toggling) */
+html.theme-anim *:not(.scard):not(.robot):not(.rv), html.theme-anim *::before, html.theme-anim *::after {
+    transition: background-color .35s ease, color .35s ease, border-color .35s ease, fill .35s ease, stroke .35s ease !important;
+}
+
+/* ---------- RESET ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 84px; background: var(--bg); }
+body { margin: 0; min-width: 320px; background: var(--bg); color: var(--tx); font-family: var(--f-body); font-size: var(--fs-body); line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+body.menu-open { overflow: hidden; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; border: 0; background: none; cursor: pointer; padding: 0; }
+h1, h2, h3, h4, p, ul, figure, blockquote { margin: 0; padding: 0; }
+ul { list-style: none; }
+svg, canvas { display: block; max-width: 100%; }
+::selection { background: var(--acc); color: #fff; }
+
+/* ---------- GLOBAL ---------- */
+.wrap { width: min(100% - 2 * var(--gut), var(--wrap)); margin-inline: auto; position: relative; z-index: 1; }
+.mono { font-family: var(--f-mono); letter-spacing: .09em; text-transform: uppercase; font-size: var(--fs-label); color: var(--mut); }
+h1, h2, h3 { font-family: var(--f-display); text-wrap: balance; font-weight: 600; letter-spacing: -.03em; }
+/* Layering: atmos 0 < robot 1 < content (.wrap, later in DOM) < footer 2 < nav 100 */
+main { position: relative; }
+footer { position: relative; z-index: 2; }
+
+.atmos { position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background:
+        radial-gradient(55% 50% at 82% 6%, rgba(164,22,42,var(--atm-a)), transparent 70%),
+        radial-gradient(50% 50% at 6% 96%, rgba(164,22,42,var(--atm-b)), transparent 70%),
+        repeating-linear-gradient(0deg, var(--scan) 0 1px, transparent 1px 4px),
+        var(--bg); }
+.atmos::after { content: ""; position: absolute; inset: 0;
+    background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 96px 96px; opacity: var(--grid-op);
+    -webkit-mask-image: radial-gradient(80% 70% at 70% 30%, #000, transparent 85%);
+    mask-image: radial-gradient(80% 70% at 70% 30%, #000, transparent 85%); }
+
+.section { position: relative; padding-block: clamp(80px, 11vw, 150px); }
+.sec-tag { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; padding-bottom: 14px; margin-bottom: clamp(32px, 5vw, 60px); border-bottom: 1px solid var(--line); }
+.sec-tag b { color: var(--ac-t); font-weight: 500; }
+.sec-tag i { flex: 1; min-width: 20px; height: 1px; background: repeating-linear-gradient(90deg, var(--rline) 0 1px, transparent 1px 8px); }
+.sec-head { max-width: 780px; display: grid; gap: 18px; margin-bottom: clamp(32px, 5vw, 56px); }
+.sec-head h2 { font-size: var(--fs-h2); line-height: 1.03; }
+.sec-head p { color: var(--tx-2); max-width: 58ch; }
+.sec-head h2 em { font-style: normal; color: var(--ac-t); }
+
+/* ---------- BUTTONS ---------- */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 0 24px; border-radius: 2px; font-family: var(--f-display); font-weight: 600; font-size: 15px; letter-spacing: -.005em; transition: background .25s, border-color .25s, color .25s, transform .2s var(--ease), box-shadow .25s; will-change: transform; }
+.btn svg { width: 14px; height: 14px; transition: transform .25s var(--ease); }
+.btn:hover svg { transform: translateX(3px); }
+.btn-primary { background: var(--acc); color: #FFFFFF; border: 1px solid var(--acc); }
+.btn-primary:hover { background: var(--acc-hi); border-color: var(--acc-hi); box-shadow: 0 0 0 4px rgba(164,22,42,.22); }
+.btn-ghost { border: 1px solid var(--line-2); color: var(--tx); background: var(--btn-ghost-bg); }
+.btn-ghost:hover { border-color: var(--ac-t); color: var(--ac-t); }
+
+.btn-ghost-on-red { border: 1px solid var(--line-on-red-2); color: var(--tx-on-red); background: rgba(0,0,0,.18); }
+.btn-ghost-on-red:hover { border-color: var(--acc-soft); color: #fff; background: rgba(0,0,0,.3); }
+.btn-primary-on-red { background: #FFFFFF; color: var(--red-deep); border: 1px solid #FFFFFF; }
+.btn-primary-on-red:hover { background: var(--tx-on-red); border-color: var(--tx-on-red); box-shadow: 0 0 0 4px rgba(255,255,255,.15); }
+
+/* ---------- NAVIGATION ---------- */
+.nav { position: fixed; inset: 0 0 auto 0; z-index: 100; border-bottom: 1px solid transparent; transition: background .3s, border-color .3s; }
+.nav.scrolled { background: var(--nav-bg); border-bottom-color: var(--rline); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+.nav-in { height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.nav-links { display: flex; align-items: center; gap: clamp(18px, 2.6vw, 34px); }
+.nav-links a:not(.btn) { font-family: var(--f-mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--tx-2); position: relative; padding: 6px 0; transition: color .2s; }
+.nav-links a:not(.btn):hover, .nav-links a.active { color: var(--tx); }
+.nav-links a:not(.btn)::after { content: ""; position: absolute; left: 0; bottom: 0; height: 1px; width: 100%; background: var(--acc); transform: scaleX(0); transform-origin: left; transition: transform .3s var(--ease); }
+.nav-links a:not(.btn):hover::after, .nav-links a.active::after { transform: scaleX(1); }
+.nav .btn { min-height: 40px; padding: 0 18px; font-size: 14px; }
+.nav-tools { display: flex; align-items: center; gap: 10px; }
+.menu-btn { display: none; width: 44px; height: 44px; border: 1px solid var(--line-2); border-radius: 2px; align-items: center; justify-content: center; }
+.menu-btn span { display: block; width: 18px; height: 1px; background: var(--tx); position: relative; transition: background .2s; }
+.menu-btn span::before, .menu-btn span::after { content: ""; position: absolute; left: 0; width: 18px; height: 1px; background: var(--tx); transition: transform .3s var(--ease); }
+.menu-btn span::before { top: -6px; } .menu-btn span::after { top: 6px; }
+body.menu-open .menu-btn span { background: transparent; }
+body.menu-open .menu-btn span::before { transform: translateY(6px) rotate(45deg); }
+body.menu-open .menu-btn span::after { transform: translateY(-6px) rotate(-45deg); }
+
+/* Theme toggle (minimalist sun / moon) */
+.theme-btn { width: 40px; height: 40px; border: 1px solid var(--line-2); border-radius: 2px; display: inline-flex; align-items: center; justify-content: center; color: var(--tx); transition: border-color .25s, color .25s, background .25s; flex-shrink: 0; }
+.theme-btn:hover { border-color: var(--ac-t); color: var(--ac-t); }
+.theme-btn svg { width: 18px; height: 18px; }
+.theme-btn .i-moon { display: none; }
+:root[data-theme="light"] .theme-btn .i-sun { display: none; }
+:root[data-theme="light"] .theme-btn .i-moon { display: block; }
+
+/* Light theme: while the nav floats over the red hero, keep it light-on-red */
+:root[data-theme="light"] .nav:not(.scrolled) .nav-links a:not(.btn) { color: var(--tx-on-red-2); }
+:root[data-theme="light"] .nav:not(.scrolled) .nav-links a:not(.btn):hover,
+:root[data-theme="light"] .nav:not(.scrolled) .nav-links a.active { color: #FFFFFF; }
+:root[data-theme="light"] .nav:not(.scrolled) .sis-wordmark { color: var(--tx-on-red); }
+:root[data-theme="light"] .nav:not(.scrolled) .theme-btn,
+:root[data-theme="light"] .nav:not(.scrolled) .menu-btn { color: var(--tx-on-red); border-color: var(--line-on-red-2); }
+:root[data-theme="light"] .nav:not(.scrolled) .menu-btn span,
+:root[data-theme="light"] .nav:not(.scrolled) .menu-btn span::before,
+:root[data-theme="light"] .nav:not(.scrolled) .menu-btn span::after { background: var(--tx-on-red); }
+:root[data-theme="light"] body.menu-open .nav:not(.scrolled) .menu-btn span { background: transparent; }
+:root[data-theme="light"] .nav:not(.scrolled) .theme-btn:hover { color: #FFFFFF; border-color: var(--acc-soft); }
+
+.m-menu { position: fixed; inset: 72px 0 0 0; z-index: 99; background: var(--menu-bg); padding: 24px var(--gut) calc(24px + env(safe-area-inset-bottom, 0px)); display: flex; flex-direction: column; opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity .25s, transform .25s var(--ease), visibility .25s; border-top: 1px solid var(--rline); }
+body.menu-open .m-menu { opacity: 1; visibility: visible; transform: none; }
+.m-menu a:not(.btn) { padding: 20px 0; border-bottom: 1px solid var(--line); font-family: var(--f-display); font-size: 28px; letter-spacing: -.02em; display: flex; justify-content: space-between; align-items: center; color: var(--tx); }
+.m-menu a:not(.btn):active { color: var(--ac-t); }
+.m-menu a:not(.btn) span { font-family: var(--f-mono); font-size: 11px; color: var(--ac-t); }
+.m-menu .btn { margin-top: 28px; min-height: 54px; }
+
+/* ---------- LOGO: S + machine I + S (UNCHANGED) ---------- */
+.sis-logo { display: inline-flex; align-items: flex-end; gap: 2px; height: 42px; flex-shrink: 0; outline: none; }
+.sis-wordmark { font-family: "IBM Plex Sans", sans-serif; font-size: 47px; line-height: .72; font-weight: 700; letter-spacing: -2px; color: var(--tx); }
+.sis-robot { width: 31px; height: 42px; margin: 0 1px 3px; flex-shrink: 0; overflow: visible; transition: transform .25s ease, filter .25s ease; }
+.sis-logo:hover .sis-robot, .sis-logo:focus-visible .sis-robot { transform: translateY(-1px); filter: drop-shadow(0 0 6px rgba(164,22,42,.65)); }
+.sis-logo.on-red .sis-wordmark { color: var(--tx-on-red); }
+
+/* ---------- PERSISTENT ROBOT LAYER ---------- */
+.robot { position: fixed; left: 50%; top: 50%; width: clamp(280px, 46vmin, 640px); aspect-ratio: 5 / 6; z-index: 1; pointer-events: none; opacity: .9; will-change: transform, opacity;
+    transform: translate(-50%, -50%) translate(24vw, 4vh) scale(1.2);
+    -webkit-mask-image: linear-gradient(#000 60%, transparent 98%); mask-image: linear-gradient(#000 60%, transparent 98%); }
+.robot svg { width: 100%; height: 100%; overflow: visible; }
+.rb-eyewrap { animation: eye-on 2.4s .4s ease-out both; }
+.rb-eyes { opacity: var(--eye, .9); }
+.rb-glow { opacity: calc(var(--eye, .9) * .85); animation: glow-breathe 5s ease-in-out infinite; }
+.rb-shade { opacity: var(--shade, .5); }
+.rb-sig path { stroke-dasharray: 40 360; opacity: 0; transition: opacity .6s; }
+.robot.sig .rb-sig path { opacity: .85; animation: sig-run 3.2s linear infinite; }
+.robot.sig .rb-sig path:nth-child(2) { animation-delay: -.8s; } .robot.sig .rb-sig path:nth-child(3) { animation-delay: -1.6s; } .robot.sig .rb-sig path:nth-child(4) { animation-delay: -2.4s; }
+
+.hud { position: fixed; right: var(--gut); bottom: 18px; z-index: 5; display: none; align-items: center; gap: 10px; pointer-events: none; color: var(--mut); }
+.hud i { width: 6px; height: 6px; background: var(--acc); box-shadow: 0 0 0 3px rgba(164,22,42,.22); animation: blink-s 2.4s ease-in-out infinite; }
+@media (min-width: 1020px) { .hud { display: flex; } }
+
+/* ---------- HERO (deep red — identical in both themes) ---------- */
+.hero { position: relative; min-height: 100vh; min-height: 100svh; display: flex; align-items: center; padding-block: 120px 80px;
+    background:
+        radial-gradient(80% 70% at 78% 30%, rgba(164,22,42,.45), transparent 70%),
+        radial-gradient(70% 60% at 20% 90%, rgba(78,8,18,.75), transparent 70%),
+        linear-gradient(160deg, #7A0E1B 0%, #650B16 45%, #4E0812 100%);
+    overflow: hidden; }
+.hero::before { content: ""; position: absolute; inset: 0; pointer-events: none;
+    background:
+        repeating-linear-gradient(0deg, rgba(0,0,0,.06) 0 1px, transparent 1px 3px),
+        radial-gradient(120% 100% at 50% 0%, transparent 60%, rgba(0,0,0,.35) 100%); }
+.hero .wrap { display: grid; gap: clamp(22px, 3vw, 34px); position: relative; z-index: 1; }
+.hero-label { display: flex; align-items: center; gap: 12px; color: var(--tx-on-red-2); }
+.hero-label::before { content: ""; width: 28px; height: 1px; background: var(--acc-soft); }
+.hero h1 { font-size: var(--fs-hero); line-height: .94; letter-spacing: -.045em; text-transform: uppercase; font-weight: 600; color: var(--tx-on-red); }
+.hero h1 .h-l { display: block; }
+.hero h1 .h-l:first-child { color: var(--tx-on-red-2); }
+.hero h1 em { font-style: normal; color: #FFFFFF; text-shadow: 0 0 30px rgba(255,255,255,.15); }
+.hero-sub { max-width: 52ch; font-size: var(--fs-lead); color: var(--tx-on-red-2); }
+.hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+.hero-status { display: flex; flex-wrap: wrap; gap: 8px 30px; color: var(--tx-on-red-2); }
+.hero-status span { display: inline-flex; align-items: center; gap: 9px; }
+.hero-status i { width: 6px; height: 6px; background: #FFFFFF; box-shadow: 0 0 0 3px rgba(255,255,255,.18); }
+.hero-status b { color: #FFFFFF; font-weight: 500; }
+.hero-annot { position: absolute; z-index: 1; right: var(--gut); top: 104px; display: grid; gap: 6px; text-align: right; color: var(--tx-on-red-2); }
+.hero-annot b { color: #FFFFFF; font-weight: 500; }
+
+/* ---------- PROBLEM ---------- */
+.problem { height: 190vh; padding: 0; background: var(--sec-bg); }
+.p-stage { position: sticky; top: 0; height: 100vh; height: 100svh; display: flex; flex-direction: column; justify-content: center; padding-top: 92px; padding-bottom: 20px; }
+.p-head { display: grid; gap: 14px; margin-bottom: clamp(14px, 2.4vh, 30px); }
+.p-head h2 { font-size: 12px; font-family: var(--f-mono); font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--ac-t); }
+.p-head h2 b { color: var(--mut); font-weight: 500; margin-right: 10px; }
+.p-head p { font-family: var(--f-display); font-weight: 600; font-size: clamp(28px, 4.4vw, 62px); line-height: 1.02; letter-spacing: -.04em; max-width: 16ch; color: var(--tx); }
+.p-field { position: relative; flex: 1; min-height: 240px; max-height: 470px; border: 1px solid var(--line-2); background: var(--panel); overflow: hidden; }
+.p-field::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px); background-size: 40px 40px; opacity: .5; }
+.p-field svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.p-node { position: absolute; left: 0; top: 0; padding: 7px 11px; border: 1px solid var(--line-2); background: var(--s2); font-family: var(--f-mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; color: var(--tx-2); will-change: transform; transition: border-color .4s, color .4s; }
+.p-node.on { border-color: var(--rline-2); color: var(--tx); }
+.p-hub { position: absolute; left: 50%; top: 50%; z-index: 2; width: 92px; height: 92px; margin: -46px 0 0 -46px; border: 1px solid var(--acc); display: grid; place-items: center; background: linear-gradient(var(--hub-wash), var(--hub-wash)), var(--s2); opacity: .18; transform: scale(.85); transition: opacity .5s, transform .5s var(--ease); }
+.p-hub::before, .p-hub::after { content: ""; position: absolute; inset: -9px; border: 1px solid rgba(164,22,42,.42); }
+.p-hub::after { inset: -18px; border-color: rgba(164,22,42,.20); }
+.p-hub span { font-family: var(--f-mono); font-size: 10px; letter-spacing: .12em; color: var(--tx); text-align: center; line-height: 1.3; }
+.p-hub.on { opacity: 1; transform: none; }
+.p-steps { display: flex; gap: 6px; margin-top: 16px; }
+.p-steps div { flex: 1; padding-top: 10px; border-top: 1px solid var(--line-2); opacity: .55; transition: opacity .4s, border-color .4s; }
+.p-steps div.on { opacity: 1; border-top-color: var(--acc); }
+.p-steps div.on .mono { color: var(--tx); }
+
+/* ---------- THE SIS SYSTEM (architecture) ---------- */
+.sys { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: clamp(28px, 5vw, 80px); align-items: start; }
+.layers { position: relative; border: 1px solid var(--line-2); background: var(--panel); }
+.layer { position: relative; display: grid; grid-template-columns: 76px minmax(0, 1fr) auto; align-items: center; gap: 12px; width: 100%; text-align: left; padding: 26px 24px 26px 0; opacity: .55; transition: opacity .35s, background .35s; color: var(--tx); }
+.layer + .layer { border-top: 1px solid var(--line); }
+.layer::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: var(--ac-t); transform: scaleY(0); transition: transform .35s var(--ease); }
+.layer.active { opacity: 1; background: linear-gradient(90deg, rgba(164,22,42,.20), transparent 70%); }
+.layer.active::before { transform: scaleY(1); }
+.layer:hover { opacity: 1; }
+.layers.has-active:not(:hover) .layer:not(.active) { opacity: .45; }
+.layer-n { justify-self: center; position: relative; z-index: 2; width: 32px; height: 32px; display: grid; place-items: center; border: 1px solid var(--line-2); background: var(--s2); font-family: var(--f-mono); font-size: 11px; color: var(--mut); transition: border-color .3s, color .3s, background .3s; }
+.layer.active .layer-n { border-color: var(--acc-hi); color: #FFFFFF; background: var(--acc); }
+.layer h3 { font-size: clamp(20px, 2.4vw, 28px); letter-spacing: -.02em; color: var(--tx); }
+.layer .mono { display: block; margin-bottom: 3px; font-size: 10px; color: var(--mut); }
+.layer-io { font-family: var(--f-mono); font-size: 10px; letter-spacing: .08em; color: var(--mut); text-transform: uppercase; text-align: right; }
+.spine { position: absolute; left: 37px; top: 40px; bottom: 40px; width: 1px; background: var(--line-2); z-index: 1; overflow: hidden; }
+.spine-lit { position: absolute; left: 0; top: 0; width: 100%; background: var(--ac-t); height: 0; transition: height .45s var(--ease); box-shadow: 0 0 8px var(--ac-t); }
+.spine-dot { position: absolute; left: -1px; width: 3px; height: 14px; background: var(--acc-soft); animation: flow-y 2.6s linear infinite; }
+.spine-dot:nth-child(3) { animation-delay: -1.3s; }
+.layer-panel { position: sticky; top: 100px; border: 1px solid var(--rline); padding: clamp(22px, 3vw, 34px); background: var(--panel-hi); display: grid; gap: 18px; min-height: 380px; align-content: start; }
+.layer-panel h3 { font-size: var(--fs-h3); color: var(--tx); }
+.layer-panel p { color: var(--tx-2); }
+.lp-flow { display: grid; grid-template-columns: 1fr auto 1fr; gap: 12px; align-items: center; padding: 14px 0; border-block: 1px solid var(--line); }
+.lp-flow div { display: grid; gap: 3px; } .lp-flow div:last-child { text-align: right; }
+.lp-flow b { font-family: var(--f-display); font-weight: 500; font-size: 15px; color: var(--tx); }
+.lp-flow svg { width: 22px; color: var(--ac-t); }
+.lp-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.lp-tags li { padding: 5px 10px; border: 1px solid var(--line-2); font-family: var(--f-mono); font-size: 11px; letter-spacing: .05em; color: var(--tx-2); background: var(--tag-bg); }
+.lp-fade { animation: panel-in .45s var(--ease); }
+
+@keyframes flow-y { from { top: -16px; } to { top: 100%; } }
+@keyframes panel-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@keyframes eye-on { 0% { opacity: 0; } 35% { opacity: .15; } 100% { opacity: 1; } }
+@keyframes glow-breathe { 50% { opacity: calc(var(--eye, .9) * .55); } }
+@keyframes sig-run { to { stroke-dashoffset: -400; } }
+@keyframes blink-s { 50% { opacity: .35; } }
+
+/* ---------- SERVICES: stacked scroll cards ---------- */
+.svc-head { display: grid; gap: 14px; margin-bottom: clamp(26px, 4vw, 44px); }
+.svc-head h2 { font-size: var(--fs-h2); line-height: 1.03; max-width: 18ch; color: var(--tx); }
+.svc-head h2 em { font-style: normal; color: var(--ac-t); }
+.svc-count { color: var(--tx); font-variant-numeric: tabular-nums; }
+.svc-stack { display: grid; gap: 20px; }
+.scard { position: relative; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); gap: clamp(22px, 4vw, 56px); align-items: center; padding: clamp(24px, 3.4vw, 48px); border: 1px solid var(--rline); background: linear-gradient(160deg, var(--card-a), var(--card-b) 70%); box-shadow: var(--card-shadow); overflow: hidden; }
+.scard::before { content: ""; position: absolute; left: -1px; right: -1px; top: -1px; height: 2px; background: linear-gradient(90deg, var(--ac-t), rgba(164,22,42,0) 60%); }
+.scard-copy { position: relative; z-index: 1; display: grid; gap: 18px; justify-items: start; }
+.scard-copy h3 { font-size: var(--fs-h3); line-height: 1.04; color: var(--tx); }
+.scard-copy p { color: var(--tx-2); max-width: 50ch; font-size: var(--fs-lead); }
+.scard-copy .btn { margin-top: 6px; }
+.scard-copy p.scard-end { font-family: var(--f-display); font-weight: 600; font-size: 16px; letter-spacing: -.01em; color: var(--tx); padding-left: 12px; border-left: 2px solid var(--ac-t); }
+.cap-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 24px; width: 100%; max-width: 460px; }
+.cap-list li { display: flex; align-items: center; gap: 10px; padding: 7px 0; border-bottom: 1px solid var(--line); font-family: var(--f-display); font-weight: 500; font-size: 15px; letter-spacing: -.01em; color: var(--tx); min-width: 0; }
+.cap-list li::before { content: ""; width: 6px; height: 6px; background: var(--ac-t); flex-shrink: 0; }
+.scard-vis { position: relative; z-index: 1; justify-self: center; width: min(100%, 240px); aspect-ratio: 1; border: 1px solid var(--rline); display: grid; place-items: center; color: var(--ac-t); background: radial-gradient(circle at 50% 50%, rgba(164,22,42,.14), transparent 70%); }
+.scard-vis::before, .scard-vis::after { content: ""; position: absolute; width: 14px; height: 14px; border: 1px solid var(--ac-t); }
+.scard-vis::before { left: -1px; top: -1px; border-right: 0; border-bottom: 0; }
+.scard-vis::after { right: -1px; bottom: -1px; border-left: 0; border-top: 0; }
+.scard-vis svg { width: 58%; height: 58%; }
+.scard[data-v="2"] { background: linear-gradient(160deg, var(--card-a2), var(--card-b) 70%); border-color: var(--rline); }
+.scard[data-v="2"] .scard-vis { background: repeating-linear-gradient(45deg, rgba(164,22,42,.10) 0 1px, transparent 1px 10px); }
+.scard[data-v="3"] .scard-vis { border-style: dashed; background: var(--red-wash); }
+.scard[data-v="1"] .scard-vis { background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px); background-size: 24px 24px; }
+
+#services.stacked { padding-block: 0; }
+#services.stacked .svc-track { height: calc(100vh * 2.6); height: calc(100svh * 2.6); }
+#services.stacked .svc-sticky { position: sticky; top: 0; height: 100vh; height: 100svh; padding-block: 84px 28px; display: flex; flex-direction: column; }
+#services.stacked .svc-sticky > .wrap { flex: 1; min-height: 0; display: flex; flex-direction: column; }
+#services.stacked .svc-head { margin-bottom: clamp(14px, 2.6vh, 28px); gap: 10px; }
+#services.stacked .svc-head h2 { font-size: clamp(26px, 3.4vw, 46px); max-width: none; }
+#services.stacked .svc-stack { position: relative; display: block; flex: 1; min-height: 0; max-height: 500px; margin-top: 58px; width: min(100%, 880px); }
+#services.stacked .scard { position: absolute; inset: 0; will-change: transform, opacity; transform-origin: 50% 0; padding: clamp(20px, 2.6vw, 36px); }
+#services.stacked .scard-copy { gap: 12px; }
+#services.stacked .scard-vis { width: min(100%, 200px); }
+
+@media (max-height: 800px) {
+    #services.stacked .svc-stack { margin-top: 36px; }
+    #services.stacked .scard-copy h3 { font-size: clamp(22px, 2.4vw, 30px); }
+    #services.stacked .scard-copy p { font-size: 15px; }
+    #services.stacked .scard-copy .mono { display: none; }
+    #services.stacked .scard-copy .btn { min-height: 42px; margin-top: 2px; }
+    #services.stacked .cap-list li { padding: 4px 0; font-size: 14px; }
+    #services.stacked .scard-vis { width: min(100%, 150px); }
+}
+
+/* ---------- PROCESS (loop) ---------- */
+.think { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(28px, 5vw, 80px); align-items: center; }
+.think h2 { font-size: var(--fs-h2); line-height: 1.03; margin-bottom: 30px; color: var(--tx); }
+.think h2 span { color: var(--tx-2); display: block; }
+.stages { border-top: 1px solid var(--line-2); }
+.stage { display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: 4px 12px; width: 100%; text-align: left; padding: 16px 0; border-bottom: 1px solid var(--line); opacity: .55; transition: opacity .3s; color: var(--tx); }
+.stage .mono { grid-row: span 2; padding-top: 5px; color: var(--mut); }
+.stage b { font-family: var(--f-display); font-weight: 600; font-size: 20px; letter-spacing: -.015em; color: var(--tx); }
+.stage span.d { color: var(--tx-2); font-size: 15px; display: block; }
+.stage.active { opacity: 1; }
+.stage.active .mono { color: var(--ac-t); }
+.stage:hover { opacity: 1; }
+.loop { position: relative; width: min(100%, 560px); margin-inline: auto; aspect-ratio: 1; }
+.loop svg { width: 100%; height: 100%; overflow: visible; }
+.loop-core { position: absolute; inset: 27%; display: grid; place-content: center; text-align: center; gap: 8px; }
+.loop-core b { font-family: var(--f-display); font-weight: 600; font-size: clamp(20px, 3.2vw, 34px); letter-spacing: -.03em; color: var(--tx); }
+.loop-core .mono { color: var(--ac-t); }
+.l-node { cursor: pointer; }
+.l-node rect { fill: var(--node-fill); stroke: var(--line-2); stroke-width: 1; transition: fill .3s, stroke .3s; }
+.l-node text { font-family: var(--f-mono); font-size: 11px; fill: var(--tx-2); text-anchor: middle; transition: fill .3s; }
+.l-node.active rect { fill: var(--acc); stroke: var(--acc-hi); }
+.l-node.active text { fill: #FFFFFF; }
+.l-ring-a { stroke: var(--line-2); } .l-ring-b { stroke: var(--rline); } .l-ring-c { stroke: var(--line); }
+#loopTicks { stroke: var(--rline-2); }
+#loopArc { stroke: var(--ac-t); }
+#loopDot { fill: var(--ac-t); }
+
+/* ---------- QUOTATION (centered) ---------- */
+.quote { position: relative; padding-block: clamp(100px, 15vw, 210px); border-block: 1px solid var(--line); background: var(--sec-bg); text-align: center; }
+.quote .wrap { display: flex; justify-content: center; }
+.quote figure { position: relative; max-width: 1100px; width: 100%; display: grid; gap: clamp(20px, 3vw, 34px); justify-items: center; text-align: center; margin-inline: auto; }
+.qmark { font-family: var(--f-display); font-weight: 700; font-size: clamp(130px, 20vw, 280px); line-height: .62; height: .5em; color: var(--acc); letter-spacing: -.05em; user-select: none; }
+.quote blockquote { display: grid; gap: .5em; justify-items: center; text-align: center; }
+.q1 { font-family: var(--f-display); font-weight: 500; font-size: clamp(22px, 3.6vw, 48px); line-height: 1.12; letter-spacing: -.03em; color: var(--tx-2); max-width: none; }
+.q2 { font-family: var(--f-display); font-weight: 600; font-size: clamp(28px, 4.8vw, 66px); line-height: 1.04; letter-spacing: -.04em; color: var(--tx); max-width: none; }
+.q2 em { font-style: normal; color: var(--ac-t); }
+.js .quote .qmark, .js .quote .q1, .js .quote .q2 { transition: opacity .9s var(--ease), transform .9s var(--ease); }
+.js .quote:not(.on) .qmark, .js .quote:not(.on) .q1, .js .quote:not(.on) .q2 { opacity: .0; transform: translateY(14px); }
+.js .quote.on .q1 { transition-delay: .12s; } .js .quote.on .q2 { transition-delay: .3s; }
+
+/* ---------- CONTACT ---------- */
+.cta { position: relative; padding-block: clamp(100px, 14vw, 200px); border-top: 1px solid var(--rline); overflow: hidden; background: var(--sec-bg); }
+.cta::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px); background-size: 64px 64px; -webkit-mask-image: radial-gradient(60% 70% at 30% 100%, #000, transparent); mask-image: radial-gradient(60% 70% at 30% 100%, #000, transparent); opacity: .55; }
+.cta .wrap { display: grid; gap: 26px; justify-items: center; text-align: center; position: relative; z-index: 1; }
+.cta h2 { font-size: clamp(34px, 6vw, 88px); line-height: .98; letter-spacing: -.045em; max-width: 13ch; text-transform: uppercase; color: var(--tx); }
+.cta h2 em { font-style: normal; color: var(--ac-t); }
+.cta p.lead { max-width: 50ch; font-size: var(--fs-lead); color: var(--tx-2); }
+.hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+.cta-mail { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; justify-content: center; }
+.cta .hero-cta { justify-content: center; }
+.cta-mail code { font-family: var(--f-mono); font-size: 14px; color: var(--ac-t); user-select: all; padding: 8px 12px; border: 1px solid var(--rline); background: var(--code-bg); }
+.copy-btn { font-family: var(--f-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--mut); padding: 8px 10px; border: 1px solid var(--line); transition: color .2s, border-color .2s; }
+.copy-btn:hover { color: var(--tx); border-color: var(--rline-2); }
+
+/* ---------- FOOTER (deep red — identical in both themes) ---------- */
+.foot { border-top: 1px solid rgba(164,22,42,.55); padding-block: 56px 28px;
+    background:
+        radial-gradient(70% 90% at 20% 0%, rgba(164,22,42,.35), transparent 65%),
+        linear-gradient(180deg, #650B16 0%, #4E0812 100%);
+    color: var(--tx-on-red); }
+.foot-top { display: grid; grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr)); gap: 40px; padding-bottom: 44px; }
+.foot-brand { display: grid; gap: 16px; align-content: start; }
+.foot-brand p { color: var(--tx-on-red-2); max-width: 34ch; font-size: 15px; }
+.foot-brand .name { font-family: var(--f-display); font-weight: 500; font-size: 17px; color: var(--tx-on-red); }
+.foot h4 { font-family: var(--f-mono); font-weight: 500; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #FFFFFF; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--line-on-red-2); }
+.foot li a { display: inline-block; padding: 5px 0; color: var(--tx-on-red-2); font-size: 15px; transition: color .2s; }
+.foot li a:hover { color: #FFFFFF; }
+.foot a:focus-visible { outline-color: #FFFFFF; }
+.foot-bot { display: flex; flex-wrap: wrap; gap: 14px 30px; justify-content: space-between; align-items: center; padding-top: 22px; border-top: 1px solid var(--line-on-red); color: var(--tx-on-red-2); }
+.sys-online { display: inline-flex; align-items: center; gap: 10px; }
+.sys-online i { width: 7px; height: 7px; background: #FFFFFF; animation: blink-s 2.4s ease-in-out infinite; }
+.sys-online b { color: #FFFFFF; font-weight: 500; }
+
+/* ---------- SCROLL RAIL ---------- */
+.rail { position: fixed; right: 18px; top: 50%; transform: translateY(-50%); z-index: 50; display: none; flex-direction: column; gap: 14px; align-items: flex-end; }
+.rail a { display: flex; align-items: center; gap: 10px; font-family: var(--f-mono); font-size: 10px; letter-spacing: .1em; color: var(--mut); text-transform: uppercase; }
+.rail a span { opacity: 0; transform: translateX(6px); transition: opacity .25s, transform .25s; }
+.rail a i { width: 14px; height: 1px; background: var(--line-2); transition: width .3s var(--ease), background .3s; }
+.rail a.on { color: var(--tx); } .rail a.on i { width: 28px; background: var(--ac-t); }
+.rail a:hover span, .rail a.on span { opacity: 1; transform: none; }
+@media (min-width: 1360px) { .rail { display: flex; } }
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 1020px) {
+    .nav-links { display: none; }
+    .menu-btn { display: inline-flex; }
+    .hero-annot { display: none; }
+    .sys { grid-template-columns: 1fr; }
+    .layer-panel { position: static; min-height: 0; }
+    .think { grid-template-columns: 1fr; }
+    .loop { width: min(100%, 460px); }
+    .foot-top { grid-template-columns: 1fr 1fr; }
+    .foot-brand { grid-column: 1 / -1; }
+}
+@media (max-width: 760px) {
+    .scard { grid-template-columns: 1fr; }
+    .scard-vis { width: 120px; justify-self: start; order: -1; }
+}
+@media (max-width: 640px) {
+    .sis-logo { height: 34px; } .sis-wordmark { font-size: 38px; } .sis-robot { width: 25px; height: 34px; margin-bottom: 2px; }
+    .nav-in { height: 64px; } .m-menu { inset-block-start: 64px; }
+    .hero { padding-block: 100px 60px; }
+    .problem { height: 165vh; }
+    .p-head p { font-size: clamp(28px, 8.4vw, 42px); }
+    .p-node { font-size: 9px; padding: 5px 7px; }
+    .p-hub { width: 70px; height: 70px; margin: -35px 0 0 -35px; }
+    .layer { grid-template-columns: 60px minmax(0, 1fr); padding-block: 20px; }
+    .layer-io { display: none; }
+    .spine { left: 29px; }
+    .foot-top { grid-template-columns: 1fr 1fr; gap: 30px 20px; }
+    .hero-cta .btn { width: 100%; }
+    .cta .hero-cta { width: 100%; }
+    .cta h2 { max-width: 11ch; }
+}
+@media (max-width: 420px) {
+    .cap-list { grid-template-columns: 1fr; }
+}
+
+/* ---------- ACCESSIBILITY ---------- */
+:focus-visible { outline: 2px solid var(--acc-soft); outline-offset: 3px; }
+:root[data-theme="light"] :focus-visible { outline-color: var(--acc); }
+.skip { position: absolute; left: 12px; top: -60px; z-index: 2000; background: var(--acc); color: #FFFFFF; padding: 10px 14px; font-family: var(--f-mono); font-size: 12px; transition: top .2s; }
+.skip:focus { top: 12px; }
+
+/* ---------- ANIMATIONS ---------- */
+.rv { transition: opacity .8s var(--ease), transform .8s var(--ease); }
+.js .rv:not(.in) { opacity: 0; transform: translateY(16px); }
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; transition-delay: 0s !important; }
+    .js .rv:not(.in), .js .quote:not(.on) .qmark, .js .quote:not(.on) .q1, .js .quote:not(.on) .q2 { opacity: 1; transform: none; }
+    .problem { height: auto; }
+    .p-stage { position: relative; height: auto; padding-block: 90px 40px; }
+    .robot.sig .rb-sig path { opacity: 0; }
+}
+
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <!-- SIS logo: machine "I". UNCHANGED per constraint. -->
+    <symbol id="sisI" viewBox="0 0 32 44">
+      <path d="M5 3H27L31 7.5V21L26 27H6L1 21V7.5Z" fill="#14141B" stroke="#FF2638" stroke-width="2.4" stroke-linejoin="miter"/>
+      <path d="M5.4 10.6L13.4 12.2L12.6 16.8L6.6 15.4Z" fill="#FF2638"/>
+      <path d="M26.6 10.6L18.6 12.2L19.4 16.8L25.4 15.4Z" fill="#FF2638"/>
+      <path d="M12.5 22H19.5" stroke="#FF2638" stroke-width="1.3" opacity=".75"/>
+      <path d="M11.5 29.6H20.5V40.6L18.4 43H13.6L11.5 40.6Z" fill="#FF2638"/>
+    </symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#main">Skip to content</a>
+<div class="atmos" aria-hidden="true"></div>
+
+<!-- PERSISTENT AI CHARACTER (fixed background layer, driven by scroll) -->
+<div class="robot" id="robot" aria-hidden="true">
+  <svg viewBox="0 0 400 480" fill="none" focusable="false">
+    <defs>
+      <linearGradient id="rbShell" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--rb-s1)"/><stop offset=".55" style="stop-color:var(--rb-s2)"/><stop offset="1" style="stop-color:var(--rb-s3)"/></linearGradient>
+      <linearGradient id="rbShadeG" x1="0" y1="0" x2="1" y2="0"><stop offset="0" style="stop-color:var(--rb-sh)" stop-opacity=".92"/><stop offset=".6" style="stop-color:var(--rb-sh)" stop-opacity=".55"/><stop offset="1" style="stop-color:var(--rb-sh)" stop-opacity="0"/></linearGradient>
+      <radialGradient id="rbHalo" cx=".5" cy=".4" r=".6"><stop offset="0" stop-color="#A4162A" stop-opacity=".22"/><stop offset="1" stop-color="#A4162A" stop-opacity="0"/></radialGradient>
+      <filter id="rbBlur" x="-30%" y="-90%" width="160%" height="280%"><feGaussianBlur stdDeviation="9"/></filter>
+      <clipPath id="rbClipL"><polygon points="108,158 186,172 178,198 118,190"/></clipPath>
+      <clipPath id="rbClipR"><polygon points="292,158 214,172 222,198 282,190"/></clipPath>
+      <pattern id="rbScan" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="1" fill="#fff" opacity=".05"/></pattern>
+    </defs>
+    <ellipse cx="200" cy="200" rx="230" ry="250" fill="url(#rbHalo)"/>
+    <!-- shoulders and neck -->
+    <g stroke="rgba(164,22,42,.35)" stroke-width="1.2">
+      <path d="M10 480L52 408L142 376H258L348 408L390 480Z" style="fill:var(--rb-body)"/>
+      <path d="M160 338H240V380H160Z" style="fill:var(--rb-neck)"/>
+      <path d="M160 352H240M160 365H240"/>
+    </g>
+    <path d="M52 408L120 424L142 376M348 408L280 424L258 376" stroke="rgba(164,22,42,.25)"/>
+    <g id="rbHead">
+      <path d="M44 170H66V240H44ZM356 170H334V240H356Z" style="fill:var(--rb-body)" stroke="rgba(164,22,42,.45)" stroke-width="1.2"/>
+      <circle cx="55" cy="205" r="3" fill="#A4162A" opacity=".85"/><circle cx="345" cy="205" r="3" fill="#A4162A" opacity=".85"/>
+      <path d="M326 118L358 42" stroke="rgba(164,22,42,.55)" stroke-width="1.4"/><circle cx="358" cy="42" r="4" fill="#A4162A"/>
+      <path d="M200 24L282 58L326 118L336 214L304 298L246 340H154L96 298L64 214L74 118L118 58Z" fill="url(#rbShell)" stroke="rgba(164,22,42,.5)" stroke-width="1.4"/>
+      <path d="M200 24L282 58L326 118L336 214L304 298L246 340H154L96 298L64 214L74 118L118 58Z" fill="url(#rbScan)"/>
+      <path d="M200 24V64M118 58L200 84L282 58" stroke="rgba(164,22,42,.4)"/>
+      <g class="rb-sig" stroke="#C41E36" stroke-width="2.2" stroke-linecap="square">
+        <path pathLength="400" d="M118 58L200 24L282 58L326 118"/>
+        <path pathLength="400" d="M74 118L64 214L96 298L154 340"/>
+        <path pathLength="400" d="M336 214L304 298L246 340"/>
+        <path pathLength="400" d="M96 140L72 184L96 218"/>
+      </g>
+      <g id="rbFace">
+        <path d="M96 140H304L328 184L304 218H96L72 184Z" style="fill:var(--rb-face)" stroke="rgba(164,22,42,.5)" stroke-width="1.2"/>
+        <g class="rb-eyewrap">
+          <g class="rb-glow" filter="url(#rbBlur)" fill="#A4162A"><polygon points="108,158 186,172 178,198 118,190"/><polygon points="292,158 214,172 222,198 282,190"/></g>
+          <g class="rb-eyes">
+            <polygon fill="#A4162A" points="108,158 186,172 178,198 118,190"/>
+            <polygon fill="#A4162A" points="292,158 214,172 222,198 282,190"/>
+            <g clip-path="url(#rbClipL)"><rect class="rb-pupil" x="142" y="162" width="8" height="30" fill="#F2C9CE" opacity=".95"/></g>
+            <g clip-path="url(#rbClipR)"><rect class="rb-pupil" x="250" y="162" width="8" height="30" fill="#F2C9CE" opacity=".95"/></g>
+          </g>
+        </g>
+        <path d="M188 232H212L206 262H194Z" style="fill:var(--rb-nose)" stroke="rgba(164,22,42,.4)"/>
+        <path d="M150 292H250M158 302H242M168 312H232" stroke="rgba(164,22,42,.5)" stroke-width="2"/>
+        <path d="M104 236L130 280M296 236L270 280" stroke="rgba(164,22,42,.35)"/>
+      </g>
+      <path class="rb-shade" d="M200 24L282 58L326 118L336 214L304 298L246 340H154L96 298L64 214L74 118L118 58Z" fill="url(#rbShadeG)"/>
+    </g>
+  </svg>
+</div>
+
+<div class="hud mono" id="hud" aria-hidden="true"><i></i><span id="hudText">SIS-01 · Observing</span></div>
+
+<!-- NAVIGATION -->
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="#top" class="sis-logo" aria-label="SIS — Smart Integration Systems, home">
+      <span class="sis-wordmark">S</span>
+      <svg class="sis-robot" viewBox="0 0 32 44" aria-hidden="true" focusable="false"><use href="#sisI"/></svg>
+      <span class="sis-wordmark">S</span>
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#system" data-s="system">Systems</a>
+      <a href="#services" data-s="services">Services</a>
+      <a href="#process" data-s="process">Process</a>
+      <a href="#sis" data-s="sis">SIS</a>
+      <a href="#contact" data-s="contact">Contact</a>
+      <a href="#contact" class="btn btn-primary" data-magnetic>Start a System</a>
+    </nav>
+    <div class="nav-tools">
+      <button class="theme-btn" id="themeBtn" type="button" aria-label="Switch to light theme" title="Switch theme">
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"/></svg>
+      </button>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mMenu"><span></span></button>
+    </div>
+  </div>
+</header>
+<nav class="m-menu" id="mMenu" aria-label="Mobile navigation">
+  <a href="#system">Systems <span>01</span></a>
+  <a href="#services">Services <span>02</span></a>
+  <a href="#process">Process <span>03</span></a>
+  <a href="#sis">SIS <span>04</span></a>
+  <a href="#contact">Contact <span>05</span></a>
+  <a href="#contact" class="btn btn-primary">Start a System</a>
+</nav>
+
+<nav class="rail" id="rail" aria-label="Page sections">
+  <a href="#problem" data-s="problem"><span>Problem</span><i></i></a>
+  <a href="#system" data-s="system"><span>System</span><i></i></a>
+  <a href="#services" data-s="services"><span>Services</span><i></i></a>
+  <a href="#process" data-s="process"><span>Process</span><i></i></a>
+  <a href="#sis" data-s="sis"><span>SIS</span><i></i></a>
+  <a href="#contact" data-s="contact"><span>Contact</span><i></i></a>
+</nav>
+
+<main id="main">
+
+<!-- HERO (deep red) -->
+<section class="hero" id="top" aria-labelledby="hero-h">
+  <div class="wrap">
+    <div class="hero-label mono">Intelligence / Systems / Automation</div>
+    <h1 id="hero-h"><span class="h-l">Your business.</span> <span class="h-l">Reengineered</span> <span class="h-l">by <em>intelligence.</em></span></h1>
+    <p class="hero-sub">SIS designs intelligent systems that connect AI, business data, communication and operations into one coordinated infrastructure.</p>
+    <div class="hero-cta">
+      <a href="#contact" class="btn btn-primary-on-red" data-magnetic>Build Your System <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a>
+      <a href="#system" class="btn btn-ghost-on-red" data-magnetic>Explore SIS</a>
+    </div>
+    <div class="hero-status mono" aria-label="System status">
+      <span><i></i>System status — <b>Ready</b></span>
+      <span><i></i>Intelligence layer — <b>Active</b></span>
+      <span><i></i>Automation — <b>Available</b></span>
+    </div>
+  </div>
+  <div class="hero-annot mono" aria-hidden="true">
+    <span>Entity — <b>SIS-01</b></span>
+    <span>Mode — <b>Observe</b></span>
+    <span>State — <b>Online</b></span>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="section problem" id="problem" aria-labelledby="problem-h">
+  <div class="p-stage">
+    <div class="wrap" style="display:flex;flex-direction:column;flex:1;min-height:0;">
+      <div class="p-head">
+        <h2 id="problem-h"><b>01</b>Business doesn't need more tools.</h2>
+        <p>It needs systems that work together.</p>
+      </div>
+      <div class="p-field" id="pField" aria-label="Diagram: nine disconnected business tools being connected into one intelligent system as you scroll">
+        <svg id="pLines" aria-hidden="true"></svg>
+        <div id="pNodes"></div>
+        <div class="p-hub" id="pHub"><span>INTELLI&shy;GENCE<br>LAYER</span></div>
+      </div>
+      <div class="p-steps mono" id="pSteps">
+        <div class="on"><span>Fragmented</span></div>
+        <div><span>Connected</span></div>
+        <div><span>Intelligent</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE SIS SYSTEM -->
+<section class="section" id="system" aria-labelledby="system-h">
+  <div class="wrap">
+    <div class="sec-tag mono rv"><b>02</b> The architecture <i></i> 5 layers</div>
+    <div class="sec-head rv">
+      <h2 id="system-h">The SIS <em>System</em></h2>
+      <p>Five layers, one continuous infrastructure. Select a layer to see what it does and how it connects to the rest.</p>
+    </div>
+    <div class="sys rv">
+      <div class="layers has-active" id="layers" role="tablist" aria-label="SIS system layers" aria-orientation="vertical">
+        <div class="spine" aria-hidden="true"><div class="spine-lit" id="spineLit"></div><div class="spine-dot"></div><div class="spine-dot"></div></div>
+        <button class="layer active" role="tab" data-i="0" aria-selected="true"><span class="layer-n">01</span><span><span class="mono">Layer 01</span><h3>Data</h3></span><span class="layer-io">Sources</span></button>
+        <button class="layer" role="tab" data-i="1" aria-selected="false"><span class="layer-n">02</span><span><span class="mono">Layer 02</span><h3>Context</h3></span><span class="layer-io">Meaning</span></button>
+        <button class="layer" role="tab" data-i="2" aria-selected="false"><span class="layer-n">03</span><span><span class="mono">Layer 03</span><h3>Intelligence</h3></span><span class="layer-io">Decisions</span></button>
+        <button class="layer" role="tab" data-i="3" aria-selected="false"><span class="layer-n">04</span><span><span class="mono">Layer 04</span><h3>Automation</h3></span><span class="layer-io">Workflows</span></button>
+        <button class="layer" role="tab" data-i="4" aria-selected="false"><span class="layer-n">05</span><span><span class="mono">Layer 05</span><h3>Action</h3></span><span class="layer-io">Outcomes</span></button>
+      </div>
+      <aside class="layer-panel" id="layerPanel" aria-live="polite">
+        <span class="mono" id="lpKicker">Layer 01</span>
+        <h3 id="lpTitle">Data</h3>
+        <p id="lpText">Every message, record, file and event the business already produces, gathered from the places it lives today.</p>
+        <div class="lp-flow"><div><span class="mono">In</span><b id="lpIn">Raw sources</b></div><svg viewBox="0 0 22 10" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M0 5h20M16 1l4 4-4 4"/></svg><div><span class="mono">Out</span><b id="lpOut">Structured data</b></div></div>
+        <ul class="lp-tags" id="lpTags"></ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section" id="services" aria-labelledby="services-h">
+  <div class="svc-track" id="svcTrack">
+    <div class="svc-sticky">
+      <div class="wrap">
+        <div class="svc-head">
+          <div class="sec-tag mono" style="margin:0"><b>03</b> Services <i></i> <span class="svc-count" id="svcCount">01 / 03</span></div>
+          <h2 id="services-h">The Three <em>Core Services</em></h2>
+        </div>
+        <div class="svc-stack" id="svcStack">
+
+          <article class="scard" data-v="2" aria-labelledby="svc1">
+            <div class="scard-copy">
+              <span class="mono">Build</span>
+              <h3 id="svc1">Customized AI Systems</h3>
+              <p>We build AI that fits your business — not the other way around.</p>
+              <ul class="cap-list" aria-label="Capabilities">
+                <li>AI Agents</li>
+                <li>Intelligent Assistants</li>
+                <li>Business Automation</li>
+                <li>Customer Support</li>
+                <li>Integrations</li>
+              </ul>
+              <p class="scard-end">Every piece tailored. Everything connected.</p>
+              <a class="btn btn-ghost" href="#contact">Discuss this <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a>
+            </div>
+            <div class="scard-vis" aria-hidden="true"><svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="10" y="10" width="24" height="24"/><rect x="18" y="18" width="8" height="8"/><path d="M16 4v6M22 4v6M28 4v6M16 34v6M22 34v6M28 34v6M4 16h6M4 22h6M4 28h6M34 16h6M34 22h6M34 28h6"/></svg></div>
+          </article>
+
+          <article class="scard" data-v="3" aria-labelledby="svc2">
+            <div class="scard-copy">
+              <span class="mono">Map</span>
+              <h3 id="svc2">Consultation</h3>
+              <p>Clarity before code. We help you understand where AI fits in your business — and where it doesn't. Clear direction. Confident decisions.</p>
+              <a class="btn btn-ghost" href="#contact">Discuss this <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a>
+            </div>
+            <div class="scard-vis" aria-hidden="true"><svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="19" cy="19" r="12"/><path d="M28 28l12 12M13 19h12M19 13v12"/></svg></div>
+          </article>
+
+          <article class="scard" data-v="1" aria-labelledby="svc3">
+            <div class="scard-copy">
+              <span class="mono">Teach</span>
+              <h3 id="svc3">Education Solutions</h3>
+              <p>Practical training shaped around your team's real work and tools — so it shows up every day, not just on day one.</p>
+              <a class="btn btn-ghost" href="#contact">Discuss this <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a>
+            </div>
+            <div class="scard-vis" aria-hidden="true"><svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M22 8L4 17l18 9 18-9-18-9zM10 21v9c0 3 6 6 12 6s12-3 12-6v-9M40 17v12"/></svg></div>
+          </article>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section" id="process" aria-labelledby="process-h">
+  <div class="wrap">
+    <div class="sec-tag mono rv"><b>04</b> How SIS thinks <i></i> continuous loop</div>
+    <div class="think rv">
+      <div>
+        <h2 id="process-h">We don't automate tasks.<span>We engineer systems.</span></h2>
+        <div class="stages" id="stages">
+          <button class="stage active" data-i="0"><span class="mono">01</span><b>Understand</b><span class="d">Understand the business.</span></button>
+          <button class="stage" data-i="1"><span class="mono">02</span><b>Map</b><span class="d">Map processes, information and bottlenecks.</span></button>
+          <button class="stage" data-i="2"><span class="mono">03</span><b>Design</b><span class="d">Design the intelligent system.</span></button>
+          <button class="stage" data-i="3"><span class="mono">04</span><b>Build</b><span class="d">Build and integrate the system.</span></button>
+          <button class="stage" data-i="4"><span class="mono">05</span><b>Optimize</b><span class="d">Measure, improve and evolve.</span></button>
+        </div>
+      </div>
+      <div class="loop" id="loop">
+        <svg viewBox="0 0 560 560" aria-hidden="true">
+          <circle class="l-ring-a" cx="280" cy="280" r="200" fill="none"/>
+          <circle class="l-ring-b" cx="280" cy="280" r="228" fill="none" stroke-dasharray="2 6"/>
+          <circle class="l-ring-c" cx="280" cy="280" r="172" fill="none"/>
+          <path id="loopArc" fill="none" stroke-width="2.4"/>
+          <g id="loopTicks"></g>
+          <circle id="loopDot" r="5"/>
+          <g id="loopNodes"></g>
+        </svg>
+        <div class="loop-core"><span class="mono" id="loopNum">Stage 01 / 05</span><b id="loopName">Understand</b><span class="mono">Then again</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTATION -->
+<section class="quote" id="sis" aria-label="SIS philosophy">
+  <div class="wrap">
+    <figure>
+      <span class="qmark" aria-hidden="true">&ldquo;</span>
+      <blockquote>
+        <p class="q1">We don't chase what's new.</p>
+        <p class="q2">We build what <em>actually fits.</em></p>
+      </blockquote>
+    </figure>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="cta" id="contact" aria-labelledby="cta-h">
+  <div class="wrap">
+    <span class="mono rv">Next stage / 05</span>
+    <h2 id="cta-h" class="rv">What should your business stop <em>doing manually?</em></h2>
+    <p class="lead rv">Tell us about the work, information and decisions that slow your team down. We'll show you what can become an intelligent system.</p>
+    <div class="hero-cta rv">
+      <a class="btn btn-primary" data-magnetic href="mailto:hello@sis.ai?subject=SIS%20inquiry&amp;body=Hello%20SIS%2C%0A%0AI%27d%20like%20to%20discuss%20an%20intelligent%20system%20for%20my%20business.%0A%0ABusiness%3A%0AWhat%20should%20stop%20being%20manual%3A%0A">Start a Conversation <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a>
+      <a class="btn btn-ghost" data-magnetic href="#system">Explore Our Systems</a>
+    </div>
+    <div class="cta-mail rv"><span class="mono">Or write to</span><code id="mailText">hello@sis.ai</code><button class="copy-btn" id="copyBtn" type="button">Copy</button></div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER (deep red) -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a href="#top" class="sis-logo on-red" aria-label="SIS home"><span class="sis-wordmark">S</span><svg class="sis-robot" viewBox="0 0 32 44" aria-hidden="true" focusable="false"><use href="#sisI"/></svg><span class="sis-wordmark">S</span></a>
+        <span class="name">Smart Integration Systems</span>
+        <p>Intelligence, engineered into the business.</p>
+      </div>
+      <nav aria-label="Footer navigation"><h4>Navigate</h4><ul><li><a href="#system">Systems</a></li><li><a href="#services">Services</a></li><li><a href="#process">Process</a></li><li><a href="#sis">SIS</a></li></ul></nav>
+      <div><h4>Services</h4><ul><li><a href="#services">Education Solutions</a></li><li><a href="#services">Customized AI Systems</a></li><li><a href="#services">Consultation</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li><a href="mailto:hello@sis.ai">hello@sis.ai</a></li><li><a href="#contact">Start a Conversation</a></li><li><a href="#" aria-label="LinkedIn (placeholder link)">LinkedIn</a></li><li><a href="#" aria-label="X (placeholder link)">X</a></li></ul></div>
+    </div>
+    <div class="foot-bot mono">
+      <span>© 2026 SIS — Smart Integration Systems</span>
+      <span class="sys-online"><i></i>SIS system <b>Online</b></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* =========================================================
+   SIS — core, navigation, theme, scroll-driven robot
+   One shared scroll scheduler (single rAF per scroll tick).
+   The robot has its own on-demand loop: it only renders while it
+   is still easing toward its target, then stops.
+========================================================= */
+(function () {
+'use strict';
+
+/* ---------- util ---------- */
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
+const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+const lerp = (a, b, t) => a + (b - a) * t;
+const ease = t => (t < .5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
+const root = document.documentElement;
+
+const jobs = [];
+let ticking = false;
+function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => { jobs.forEach(f => f()); ticking = false; });
+}
+addEventListener('scroll', onScroll, { passive: true });
+addEventListener('resize', onScroll);
+window.SIS = { reduce, fine, clamp, lerp, ease, $, $$, onScroll: f => jobs.push(f), kick: onScroll, robotReact: () => {}, svcP: 0 };
+
+/* ---------- theme toggle (dark grey / light grey) ---------- */
+(function theme() {
+    const btn = $('#themeBtn'), meta = $('meta[name="theme-color"]');
+    if (!btn) return;
+    const COLORS = { dark: '#202124', light: '#D6D8DE' };
+    let animTimer = 0;
+    function apply(t, animate) {
+        if (animate && !reduce) {
+            root.classList.add('theme-anim');
+            clearTimeout(animTimer);
+            animTimer = setTimeout(() => root.classList.remove('theme-anim'), 450);
+        }
+        root.setAttribute('data-theme', t);
+        if (meta) meta.setAttribute('content', COLORS[t]);
+        btn.setAttribute('aria-label', t === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+        btn.setAttribute('title', t === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+    }
+    apply(root.getAttribute('data-theme') === 'light' ? 'light' : 'dark', false);
+    btn.addEventListener('click', () => {
+        const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+        apply(next, true);
+        try { localStorage.setItem('sis-theme', next); } catch (_) {}
+    });
+})();
+
+/* ---------- navigation ---------- */
+const nav = $('#nav'), menuBtn = $('#menuBtn'), mMenu = $('#mMenu');
+const sectionIds = ['problem', 'system', 'services', 'process', 'sis', 'contact'];
+const sectionEls = sectionIds.map(id => document.getElementById(id));
+const navLinks = $$('[data-s]');
+
+jobs.push(() => {
+    nav.classList.toggle('scrolled', scrollY > 16);
+    const mid = innerHeight * .4;
+    let cur = null;
+    sectionEls.forEach(s => { const r = s.getBoundingClientRect(); if (r.top <= mid && r.bottom > mid) cur = s.id; });
+    navLinks.forEach(a => a.classList.toggle('active', a.dataset.s === cur));
+});
+
+function setMenu(open) {
+    document.body.classList.toggle('menu-open', open);
+    menuBtn.setAttribute('aria-expanded', String(open));
+    menuBtn.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+}
+menuBtn.addEventListener('click', () => setMenu(!document.body.classList.contains('menu-open')));
+$$('a', mMenu).forEach(a => a.addEventListener('click', () => setMenu(false)));
+addEventListener('keydown', e => { if (e.key === 'Escape' && document.body.classList.contains('menu-open')) { setMenu(false); menuBtn.focus(); } });
+addEventListener('resize', () => { if (innerWidth > 1020) setMenu(false); });
+
+/* anchor scrolling that respects reduced motion */
+$$('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
+    const id = a.getAttribute('href');
+    if (id.length < 2) { e.preventDefault(); return; }
+    const t = document.querySelector(id);
+    if (!t) return;
+    e.preventDefault();
+    t.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+    try { history.replaceState(null, '', id); } catch (_) {}
+}));
+
+/* ---------- reveal on scroll ---------- */
+(function reveal() {
+    const items = $$('.rv');
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .1 });
+    items.forEach(el => { if (el.getBoundingClientRect().top < innerHeight * .95) el.classList.add('in'); });
+    root.classList.add('js');
+    items.forEach(el => { if (!el.classList.contains('in')) io.observe(el); });
+    const q = $('.quote');
+    if (q) new IntersectionObserver((es, o) => { if (es[0].isIntersecting) { q.classList.add('on'); o.disconnect(); } }, { threshold: .3 }).observe(q);
+})();
+
+/* ---------- magnetic buttons ---------- */
+(function magnetic() {
+    if (!fine || reduce) return;
+    $$('[data-magnetic]').forEach(el => {
+        el.addEventListener('pointermove', e => {
+            const r = el.getBoundingClientRect();
+            el.style.transform = `translate(${((e.clientX - r.left - r.width / 2) / r.width) * 9}px,${((e.clientY - r.top - r.height / 2) / r.height) * 7}px)`;
+        });
+        el.addEventListener('pointerleave', () => { el.style.transform = ''; });
+    });
+})();
+
+/* ---------- the persistent robot ---------- */
+(function robot() {
+    const el = $('#robot'); if (!el) return;
+    const hudText = $('#hudText');
+    const pupils = $$('.rb-pupil', el), face = $('#rbFace');
+    const K = ['x', 'y', 's', 'r', 'o', 'eye', 'gx', 'gy', 'yaw', 'shade'];
+    /* x,y in vw/vh from screen centre; s scale; r deg; o opacity; eye 0..1; gx,gy gaze -1..1; yaw face turn; shade darkness over the face */
+    const ST = {
+        hero:     { x: 24,  y: 4,  s: 1.2,  r: 0,  o: .95, eye: .9,  gx: .35, gy: 0,  yaw: .25,  shade: .55 },
+        problem:  { x: 30,  y: 14, s: .8,   r: -3, o: .55, eye: .7,  gx: -.9, gy: .15, yaw: -.7, shade: .2 },
+        system:   { x: 30,  y: 2,  s: .85,  r: 0,  o: .42, eye: .65,  gx: -.35, gy: 0,  yaw: -.3, shade: .1 },
+        services: { x: 33,  y: 8,  s: .85,  r: 0,  o: .65, eye: .8,  gx: -.75, gy: 0,  yaw: -.5, shade: .1 },
+        process:  { x: 22,  y: 2,  s: .95,  r: 0,  o: .32, eye: .6, gx: 0,   gy: 0,   yaw: 0,   shade: 0 },
+        sis:      { x: 27,  y: 2,  s: 1.0,  r: 0,  o: .38, eye: .95, gx: 0,   gy: 0,   yaw: 0,   shade: 0 },
+        contact:  { x: 36,  y: 16, s: .62, r: 0,  o: .38, eye: 1,   gx: -.5, gy: 0,   yaw: -.25, shade: .1 }
+    };
+    const HUD = { hero: 'Observing', problem: 'Analyzing fragments', system: 'Connecting layers', services: 'Executing', process: 'Evolving', sis: 'Speaking', contact: 'Awaiting input' };
+    const secs = [['top', 'hero'], ['problem', 'problem'], ['system', 'system'], ['services', 'services'], ['process', 'process'], ['sis', 'sis'], ['contact', 'contact']]
+        .map(([id, k]) => ({ el: document.getElementById(id), k }));
+    let stops = [], bounds = [], cur = null, tgt = null, raf = 0, bump = 0, reactGy = 0, lastName = '';
+
+    function adapt(s) {
+        const w = innerWidth, o = Object.assign({}, s);
+        if (w < 760) { o.x = 20; o.y = -24 + s.y * .2; o.s = s.s * .55; o.o = s.o * .55; }
+        else if (w < 1020) { o.x = s.x * .6; o.s = s.s * .82; o.o = s.o * .75; }
+        return o;
+    }
+    function measure() {
+        stops = []; bounds = [];
+        secs.forEach((s, i) => {
+            const r = s.el.getBoundingClientRect(), top = r.top + scrollY, h = r.height;
+            bounds.push({ k: s.k, top, bottom: top + h });
+            stops.push({ p: i === 0 ? -1e9 : top + h * .3, st: ST[s.k] });
+            stops.push({ p: i === secs.length - 1 ? 1e9 : top + h * .7, st: ST[s.k] });
+        });
+    }
+    function sectionAt(probe) {
+        let name = bounds[0].k;
+        for (const b of bounds) if (probe >= b.top) name = b.k;
+        return name;
+    }
+    function compute() {
+        const probe = scrollY + innerHeight * .5;
+        let a = stops[0], b = stops[stops.length - 1];
+        for (let i = 0; i < stops.length - 1; i++) if (probe >= stops[i].p && probe < stops[i + 1].p) { a = stops[i]; b = stops[i + 1]; break; }
+        const t = a === b ? 0 : ease(clamp((probe - a.p) / (b.p - a.p), 0, 1));
+        const out = {}; K.forEach(k => { out[k] = lerp(a.st[k], b.st[k], t); });
+        const name = sectionAt(probe);
+        if (name === 'services') out.gy += (SIS.svcP / 2 - .5) * 1.1;
+        if (name === 'process') out.gy += reactGy;
+        if (name !== lastName) {
+            lastName = name;
+            el.classList.toggle('sig', name === 'system' && !reduce);
+            if (hudText) hudText.textContent = 'SIS-01 · ' + HUD[name];
+        }
+        tgt = adapt(out);
+    }
+    function apply() {
+        const c = cur, eye = clamp(c.eye + bump * .4, 0, 1);
+        el.style.transform = `translate(-50%,-50%) translate(${c.x.toFixed(2)}vw,${c.y.toFixed(2)}vh) rotate(${c.r.toFixed(2)}deg) scale(${c.s.toFixed(3)})`;
+        el.style.opacity = c.o.toFixed(3);
+        el.style.setProperty('--eye', eye.toFixed(3));
+        el.style.setProperty('--shade', c.shade.toFixed(3));
+        const gx = c.gx * 7, gy = c.gy * 5;
+        pupils.forEach(p => p.setAttribute('transform', `translate(${gx.toFixed(2)} ${gy.toFixed(2)})`));
+        face.setAttribute('transform', `translate(${(c.yaw * 12).toFixed(2)} ${(c.gy * 3).toFixed(2)})`);
+    }
+    let lastT = 0;
+    function frame(now) {
+        raf = 0; let moving = false;
+        /* time-based easing: same feel at 60/120/144 Hz, no jumps after a stalled frame */
+        const dt = lastT ? Math.min(now - lastT, 64) : 16.7; lastT = now;
+        const f = 1 - Math.exp(-dt / 140), bd = Math.pow(.94, dt / 16.7);
+        K.forEach(k => { const d = tgt[k] - cur[k]; if (Math.abs(d) > .0015) { cur[k] += d * f; moving = true; } else cur[k] = tgt[k]; });
+        if (bump > 0) { bump *= bd; if (bump < .01) bump = 0; else moving = true; }
+        apply();
+        if (moving) raf = requestAnimationFrame(frame); else lastT = 0;
+    }
+    const start = () => { if (!raf) raf = requestAnimationFrame(frame); };
+
+    window.SIS.robotReact = ({ gy = 0, flare = 1 } = {}) => { if (reduce) return; reactGy = gy; bump = flare; if (tgt) compute(); start(); };
+
+    function init() {
+        measure(); compute();
+        if (reduce) { cur = Object.assign({}, adapt(ST.hero)); cur.o = Math.min(cur.o, .3); cur.eye = .85; apply(); return; }
+        cur = Object.assign({}, tgt, { o: 0 });
+        apply(); start();
+        jobs.push(() => { compute(); start(); });
+    }
+    addEventListener('resize', () => { measure(); compute(); if (reduce) { cur = Object.assign({}, adapt(ST.hero)); cur.o = Math.min(cur.o, .3); cur.eye = .85; apply(); } else start(); });
+    addEventListener('load', () => { measure(); compute(); start(); });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { measure(); compute(); start(); });
+    init();
+})();
+})();
+
+/* =========================================================
+   SIS — sections: problem, architecture, services stack,
+   process loop, copy-to-clipboard
+========================================================= */
+(function () {
+'use strict';
+const { $, $$, clamp, lerp, ease, reduce, fine } = window.SIS;
+const jobs = f => window.SIS.onScroll(f);
+
+/* ---------- problem: fragmented -> connected -> intelligent ---------- */
+(function problem() {
+    const sec = $('#problem'), field = $('#pField'), svg = $('#pLines'), host = $('#pNodes'), hub = $('#pHub');
+    if (!sec) return;
+    const names = ['Interactions', 'Conversations', 'Spreadsheets', 'Documents', 'CRM', 'Processes', 'Employees', 'Platforms', 'Software'];
+    const scat = [[.12, .2, -4], [.42, .12, 3], [.8, .2, -2], [.22, .56, 5], [.64, .5, -3], [.9, .64, 2], [.1, .86, -2], [.46, .84, 4], [.8, .88, -5]];
+    const NS = 'http://www.w3.org/2000/svg';
+    const nodes = names.map(n => { const el = document.createElement('div'); el.className = 'p-node'; el.textContent = n; host.appendChild(el); return { el, w: 0, h: 0 }; });
+    const hubLines = names.map(() => { const l = document.createElementNS(NS, 'line'); l.setAttribute('pathLength', '1'); l.style.stroke = 'var(--ac-t)'; l.setAttribute('stroke-width', '1'); l.style.strokeDasharray = '1'; svg.appendChild(l); return l; });
+    const pairs = [[0, 3], [1, 4], [2, 5], [3, 7], [4, 8], [6, 7], [0, 6], [2, 4]];
+    const noise = pairs.map(() => { const l = document.createElementNS(NS, 'line'); l.style.stroke = 'var(--mut-2)'; l.setAttribute('stroke-dasharray', '3 6'); svg.appendChild(l); return l; });
+    const steps = $$('#pSteps div');
+    let W = 0, H = 0, lastP = -1, hubHalf = 64;
+    function measure() {
+        W = field.clientWidth; H = field.clientHeight;
+        svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+        nodes.forEach(n => { n.w = n.el.offsetWidth; n.h = n.el.offsetHeight; });
+        hubHalf = hub.offsetWidth / 2 + 19;
+        lastP = -1; update();
+    }
+    function update() {
+        const r = sec.getBoundingClientRect(), total = r.height - innerHeight;
+        const p = total > 40 ? clamp(-r.top / total, 0, 1) : 1;
+        if (Math.abs(p - lastP) < .0015) return; lastP = p;
+        const m = ease(clamp((p - .1) / .5, 0, 1)), draw = clamp((p - .4) / .25, 0, 1);
+        const rx = Math.min(W * .36, 380), ry = H * .34;
+        const pos = nodes.map((n, i) => {
+            const s = scat[i], a = (i / names.length) * Math.PI * 2 - Math.PI / 2;
+            const jit = (1 - m) * (Math.sin(p * 40 + i * 2) * 3);
+            const x = lerp(s[0] * W, W / 2 + Math.cos(a) * rx, m) + jit, y = lerp(s[1] * H, H / 2 + Math.sin(a) * ry, m) + jit * .6;
+            n.el.style.transform = `translate(${x - n.w / 2}px,${y - n.h / 2}px) rotate(${lerp(s[2], 0, m)}deg)`;
+            n.el.classList.toggle('on', p > .6);
+            return [x, y];
+        });
+        hubLines.forEach((l, i) => {
+            const dx = pos[i][0] - W / 2, dy = pos[i][1] - H / 2, k = hubHalf / Math.max(Math.abs(dx), Math.abs(dy), 1);
+            l.setAttribute('x1', pos[i][0]); l.setAttribute('y1', pos[i][1]); l.setAttribute('x2', W / 2 + dx * k); l.setAttribute('y2', H / 2 + dy * k);
+            l.style.strokeDashoffset = String(1 - clamp(draw * 1.3 - i * .03, 0, 1));
+            l.setAttribute('stroke-opacity', String(.35 + .5 * clamp((p - .7) / .2, 0, 1)));
+        });
+        noise.forEach((l, k) => {
+            const a = pos[pairs[k][0]], b = pos[pairs[k][1]];
+            l.setAttribute('x1', a[0]); l.setAttribute('y1', a[1]); l.setAttribute('x2', b[0]); l.setAttribute('y2', b[1]);
+            l.setAttribute('stroke-opacity', String(.6 * (1 - clamp(p / .4, 0, 1))));
+        });
+        hub.classList.toggle('on', p > .68);
+        const st = p < .34 ? 0 : p < .68 ? 1 : 2;
+        steps.forEach((s, i) => s.classList.toggle('on', i === st));
+    }
+    jobs(update);
+    addEventListener('resize', measure);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
+    measure();
+})();
+
+/* ---------- the SIS system: interactive layers ---------- */
+(function layers() {
+    const data = [
+        { k: 'Layer 01', t: 'Data', p: 'Every message, record, file and event the business already produces, gathered from the places it lives today.', i: 'Raw sources', o: 'Structured data', tags: ['Messages', 'Documents', 'Spreadsheets', 'CRM records', 'Forms'] },
+        { k: 'Layer 02', t: 'Context', p: 'Data is tied to meaning: who the customer is, what happened before, which rules and policies apply.', i: 'Structured data', o: 'Context', tags: ['Customer history', 'Knowledge base', 'Policies', 'Permissions'] },
+        { k: 'Layer 03', t: 'Intelligence', p: 'AI reads intent, weighs the context around it and decides what should happen next.', i: 'Context', o: 'Decisions', tags: ['Intent', 'Reasoning', 'Classification', 'Drafting'] },
+        { k: 'Layer 04', t: 'Automation', p: 'Decisions become workflows with business logic, approvals, hand-offs and fallbacks built in.', i: 'Decisions', o: 'Workflows', tags: ['Triggers', 'Rules', 'Approvals', 'Hand-offs'] },
+        { k: 'Layer 05', t: 'Action', p: 'The system acts in your tools: it replies, updates records, notifies people and executes tasks.', i: 'Workflows', o: 'Outcomes', tags: ['Reply', 'Update', 'Notify', 'Execute'] }
+    ];
+    const wrap = $('#layers'); if (!wrap) return;
+    const btns = $$('.layer', wrap), lit = $('#spineLit'), panel = $('#layerPanel');
+    let cur = -1, lastScroll = 0;
+    addEventListener('scroll', () => { lastScroll = Date.now(); }, { passive: true });
+    function set(i, focus) {
+        if (i === cur) return; cur = i;
+        btns.forEach((b, k) => { b.classList.toggle('active', k === i); b.setAttribute('aria-selected', String(k === i)); b.tabIndex = k === i ? 0 : -1; });
+        const b = btns[i];
+        lit.style.height = Math.max(0, b.offsetTop + b.offsetHeight / 2 - 40) + 'px';
+        const d = data[i];
+        $('#lpKicker').textContent = d.k; $('#lpTitle').textContent = d.t; $('#lpText').textContent = d.p;
+        $('#lpIn').textContent = d.i; $('#lpOut').textContent = d.o;
+        $('#lpTags').innerHTML = d.tags.map(t => `<li>${t}</li>`).join('');
+        panel.classList.remove('lp-fade'); void panel.offsetWidth; panel.classList.add('lp-fade');
+        if (focus) b.focus();
+    }
+    btns.forEach((b, i) => {
+        b.addEventListener('click', () => set(i));
+        b.addEventListener('focus', () => set(i));
+        if (fine) b.addEventListener('pointermove', e => { if (Date.now() - lastScroll < 300 || (!e.movementX && !e.movementY)) return; set(i); });
+        b.addEventListener('keydown', e => {
+            if (e.key === 'ArrowDown' || e.key === 'ArrowRight') { e.preventDefault(); set((i + 1) % 5, true); }
+            if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') { e.preventDefault(); set((i + 4) % 5, true); }
+        });
+    });
+    addEventListener('resize', () => { const c = cur; cur = -1; set(c < 0 ? 0 : c); });
+    set(0);
+})();
+
+/* ---------- services: stacked scroll cards ---------- */
+(function services() {
+    const sec = $('#services'), track = $('#svcTrack'); if (!sec) return;
+    const cards = $$('.scard', track), n = cards.length, count = $('#svcCount');
+    const mq = matchMedia('(max-width: 900px), (max-height: 640px), (prefers-reduced-motion: reduce)');
+    let active = -1, stacked = false;
+    const pad = v => String(v).padStart(2, '0');
+
+    /* hold each card briefly, then ease to the next */
+    const shape = p => { const i = Math.floor(p), f = p - i; return i + (f < .12 ? 0 : f > .88 ? 1 : ease((f - .12) / .76)); };
+
+    function setActive(a) {
+        if (a === active) return; active = a;
+        cards.forEach((c, i) => { c.toggleAttribute('inert', stacked && i !== a); c.classList.toggle('is-active', i === a); });
+        count.textContent = `${pad(a + 1)} / ${pad(n)}`;
+    }
+    function clear() { cards.forEach(c => { c.style.transform = ''; c.style.opacity = ''; c.style.filter = ''; c.style.zIndex = ''; c.removeAttribute('inert'); }); }
+    function mode() {
+        const want = !mq.matches;
+        if (want === stacked) return;
+        stacked = want; sec.classList.toggle('stacked', stacked);
+        active = -1;
+        if (!stacked) { clear(); window.SIS.svcP = 0; count.textContent = `01 / ${pad(n)}`; } else update();
+    }
+    function update() {
+        if (!stacked) return;
+        const r = track.getBoundingClientRect(), total = r.height - innerHeight;
+        const raw = total > 40 ? clamp(-r.top / total, 0, 1) * (n - 1) : 0;
+        const p = shape(raw);
+        window.SIS.svcP = p;
+        cards.forEach((c, i) => {
+            const t = p - i; let y, s, o, dim;
+            if (t < 0) { const u = clamp(-t, 0, 1); y = ease(u) * 112; s = 1; o = 1; dim = 1; }
+            else { y = -t * 26; s = 1 - t * .045; o = clamp(1 - t * .3, .25, 1); dim = clamp(1 - t * .3, .45, 1); }
+            c.style.transform = `translate3d(0,${y.toFixed(2)}${t < 0 ? '%' : 'px'},0) scale(${s.toFixed(4)})`;
+            c.style.opacity = o.toFixed(3);
+            c.style.filter = dim < 1 ? `brightness(${dim.toFixed(3)})` : '';
+            c.style.zIndex = String(i + 1);
+        });
+        setActive(clamp(Math.round(p), 0, n - 1));
+    }
+    mq.addEventListener ? mq.addEventListener('change', mode) : mq.addListener(mode);
+    jobs(update);
+    addEventListener('resize', () => { mode(); update(); });
+    mode();
+    if (!stacked) setActive(0);
+})();
+
+/* ---------- how SIS thinks: continuous loop ---------- */
+(function loop() {
+    const el = $('#loop'); if (!el) return;
+    const NS = 'http://www.w3.org/2000/svg', C = 280, R = 200;
+    const names = ['Understand', 'Map', 'Design', 'Build', 'Optimize'];
+    const gNodes = $('#loopNodes'), arc = $('#loopArc'), dot = $('#loopDot'), ticks = $('#loopTicks');
+    const stageBtns = $$('#stages .stage');
+    const pt = (deg, r = R) => [C + r * Math.cos(deg * Math.PI / 180), C + r * Math.sin(deg * Math.PI / 180)];
+    for (let d = 0; d < 360; d += 5) { const a = pt(d, 228), b = pt(d, d % 30 === 0 ? 244 : 236); const l = document.createElementNS(NS, 'line'); l.setAttribute('x1', a[0]); l.setAttribute('y1', a[1]); l.setAttribute('x2', b[0]); l.setAttribute('y2', b[1]); ticks.appendChild(l); }
+    const nodeEls = names.map((n, i) => {
+        const [x, y] = pt(-90 + 72 * i);
+        const g = document.createElementNS(NS, 'g'); g.setAttribute('class', 'l-node'); g.setAttribute('transform', `translate(${x},${y})`);
+        g.innerHTML = `<rect x="-52" y="-15" width="104" height="30"/><text y="4">${n.toUpperCase()}</text>`;
+        g.addEventListener('click', () => choose(i));
+        gNodes.appendChild(g); return g;
+    });
+    let t = 0, active = -1, hold = 0, inView = false, last = 0;
+    function show(i) {
+        if (i === active) return; active = i;
+        stageBtns.forEach((b, k) => b.classList.toggle('active', k === i));
+        nodeEls.forEach((g, k) => g.classList.toggle('active', k === i));
+        $('#loopNum').textContent = `Stage 0${i + 1} / 05`; $('#loopName').textContent = names[i];
+        window.SIS.robotReact({ gy: (i - 2) * .28, flare: 1 });
+    }
+    function draw() {
+        const deg = -90 + 360 * t, [x, y] = pt(deg);
+        dot.setAttribute('cx', x); dot.setAttribute('cy', y);
+        const [sx, sy] = pt(-90), large = t > .5 ? 1 : 0;
+        arc.setAttribute('d', t < .002 ? '' : `M${sx} ${sy} A${R} ${R} 0 ${large} 1 ${x} ${y}`);
+        show(Math.round(t * 5) % 5);
+    }
+    function choose(i) { t = i / 5; hold = performance.now() + 6000; draw(); }
+    stageBtns.forEach((b, i) => { b.addEventListener('click', () => choose(i)); b.addEventListener('focus', () => choose(i)); if (fine) b.addEventListener('pointerenter', () => choose(i)); });
+    function frame(now) {
+        if (!inView) return;
+        const dt = Math.min(now - last, 60); last = now;
+        if (now > hold) { t = (t + dt / 22000) % 1; draw(); }
+        requestAnimationFrame(frame);
+    }
+    new IntersectionObserver(es => { inView = es[0].isIntersecting; if (inView && !reduce) { last = performance.now(); requestAnimationFrame(frame); } }, { threshold: .1 }).observe(el);
+    draw();
+})();
+
+/* ---------- copy email ---------- */
+(function copy() {
+    const btn = $('#copyBtn'), txt = $('#mailText'); if (!btn) return;
+    btn.addEventListener('click', async () => {
+        let ok = false;
+        try { await navigator.clipboard.writeText(txt.textContent); ok = true; } catch (_) {
+            const r = document.createRange(); r.selectNodeContents(txt);
+            const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r);
+        }
+        btn.textContent = ok ? 'Copied' : 'Press Ctrl+C';
+        setTimeout(() => { btn.textContent = 'Copy'; }, 1800);
+    });
+})();
+
+window.SIS.kick();
+})();
+
+</script>
+</body>
+</html>
